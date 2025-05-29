@@ -1,0 +1,12 @@
+$average: 975px;
+$small: 600px;
+
+
+@mixin respond-to($media) {
+	@if $media == medium-screens {
+		@media only screen and (max-width: $average ) { @content; }
+	}
+	@else if $media == wide-screens {
+		@media only screen and (max-width: $small) { @content; }
+	}
+}

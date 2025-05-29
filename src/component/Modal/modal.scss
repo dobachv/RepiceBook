@@ -1,0 +1,51 @@
+
+@use '../../color' as *;
+@use '../../mixin' as *;
+
+.modal {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform:scale(0);
+    z-index: 9999;
+
+
+  &.active {
+    /* Можно добавить дополнительные стили для активного состояния, если нужно */
+    /* например, анимацию появления */
+ transform:scale(1);
+  }
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  min-width: 500px;
+      @include respond-to(wide-screens){
+       min-width: 300px;
+    }
+
+}
+
+.closeButton {
+  position: absolute;
+  top:10px;
+  right:10px;
+  background:none;
+  border:none;
+  font-size:20px;
+  cursor:pointer;
+
+}

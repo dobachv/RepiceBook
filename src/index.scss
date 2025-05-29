@@ -1,0 +1,154 @@
+
+@use './color' as *;
+@use './mixin' as *;
+
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+@font-face {
+  font-family: 'ZnikomitNo25';
+	src: url('../src/assent/fonts/ZnikomitNo25.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Tilda Sans';
+  src: url('../src/assent/fonts/TildaSans-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Liliane Classe';
+    src: url('../src/assent/fonts/LilianeClasse-LightItalic.woff') format('woff');
+    font-weight: 300;
+    font-style: italic;
+}
+@font-face {
+  font-family: 'Liliane Classe';
+  src: url('../src/assent/fonts/LilianeClasse-SemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Liliane Classe';
+  src: url('../src/assent/fonts/LilianeClasse-Light.woff2') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  
+}
+
+@font-face  {
+  font-family: 'Elly Sandeo Cyrillic Script';
+  src: url('../src/assent/fonts/EllySandeoCyrillic-Script.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+body {
+  margin: 0;
+  font-family: 'Tilda Sans', 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.input-reset {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+}
+
+.main{
+  flex: 1;
+  display: flex;
+  overflow: auto;
+  @include respond-to(wide-screens){
+    flex-direction: column;
+  }
+}
+
+.container{
+  margin: 0 auto;
+  max-width: 1440px;
+  padding: 1.5em 2em;
+  box-sizing: border-box;
+}
+
+.btn{
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 26px;
+  border: none;
+  background-color: #675545;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Tilda Sans';
+  font-size: 26px;
+  font-weight: 300;
+  font-style: normal;
+  @include respond-to(wide-screens){
+    font-size: 15px;
+}
+
+  &:hover {
+    background-color: #4b3a36; 
+    outline: none; 
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+  }
+
+
+  &:focus {
+    outline: 3px solid #fff; 
+    outline-offset: -2px;
+    box-shadow: 0 0 0 3px rgba(103, 85, 69, 0.5); 
+    transition: all 0.3s ease;
+  }
+
+  &:active {
+    background-color: #4b2f20; 
+    transform: translateY(1px);
+    transition: all 0.1s ease;
+  }
+}

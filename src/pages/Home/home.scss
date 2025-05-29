@@ -1,0 +1,30 @@
+
+@use '../../color' as *;
+@use '../../mixin' as *;
+
+
+.welcome{
+    width: 100%;
+}
+
+.welcome__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  max-width: 800px;
+  height: 100%;
+
+}
+
+.welcome__title{
+    font-size: 35px;
+    text-align: center;
+}
+
+.welcome__text{
+     font-size: 20px;
+     text-align: center;
+}
+
