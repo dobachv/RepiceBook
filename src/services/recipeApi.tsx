@@ -71,7 +71,7 @@ export const recipeApi = createApi({
             return { error: err };
             }
         },
-        invalidatesTags: (result, error, id) => [{ type:'Recipe', id }],
+        invalidatesTags: (_result, _error, id) => [{ type:'Recipe', id }],
         }),
         updateRecipe: builder.mutation<{ success: boolean }, { id: string; data: Partial<z.infer<typeof RecipeSchema>> }>({
             async queryFn({ id, data }) {
@@ -85,7 +85,7 @@ export const recipeApi = createApi({
                 return { error: err };
                 }
             },
-            invalidatesTags: (result, error, { id }) => [{ type: 'Recipe', id }],
+            invalidatesTags: (_result, _error, { id }) => [{ type: 'Recipe', id }],
         }),
 
     }),
